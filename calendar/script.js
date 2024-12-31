@@ -96,7 +96,7 @@ nextButton.addEventListener('click', nextMonth);
 let currentDay = currentDate.getDate()
 
 // Find the element of the current date
-let currentDayElement = document.querySelector('.dates li:nth-child(' + (currentDay+1) + ')');
+let currentDayElement = document.querySelector('.dates li:nth-child(' + (currentDay) + ')');
 
 // Add a class to highlight the current date
 currentDayElement.classList.add('highlight');
