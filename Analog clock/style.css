@@ -127,3 +127,24 @@ h1{
     top:30px;
     right:80px;
 }
+/* media quiry for small screen */
+@media only screen and (max-width: 700px) and (min-width:100px) {
+    .clock{height: 200px;width: 200px;}
+    #clock1{top:20px;right:60px}
+    #clock2{top:45px;right:30px}
+    #clock3{top:85px;right:15px}
+    #clock4{top:130px;right:20px}
+    #clock5{top:155px;right:50px}
+    #clock6{bottom:10px;left:100px}
+    #clock7{top:155px;left:55px}
+    #clock8{top:125px;left:35px}
+    #clock9{top:85px;left:15px}
+    #clock10{top:45px;left:30px}
+    #clock11{top:20px;left:60px}
+    #clock12{top:10px;left:90px}
+    .axis{ height: 15px;width: 15px;top:90px;left:100px;}
+    .minute_hand{top:30px;left:100px;height: 70px;width: 5px;}
+    .hour_hand{top:40px;left:105px;height: 55px;width: 6px;}
+    .sec_hand{top:10px;left:102px;height: 90px;width: 3px;}
+    h1{font-size: 20px;width: max-content;}
+}

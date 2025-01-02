@@ -32,6 +32,7 @@ function generateCalendar(year, month) {
     // Add empty li elements for the days before the first day of the month
     for (let i = 0; i < firstDay; i++) {
         let emptyListItem = document.createElement('li');
+        emptyListItem.classList.add('empty-date');
         datesList.appendChild(emptyListItem); //it will append the empty list of dates of previes month 
     }
 
@@ -45,15 +46,18 @@ function generateCalendar(year, month) {
 
     // Append the list of dates to the dates container
     datesContainer.appendChild(datesList);
-} 
 
-//Remove hover effect form empty list
-function removeHoverEffect() {
-    let emptyListItems = document.querySelectorAll('.dates ul li');
-    emptyListItems.forEach((item) => {
-        item.classList.remove('hover-date');
-    });
+    //Remove hover effect form empty list
+    // Function to remove hover effects from empty list items
+    function removeHoverEffect() {
+        let emptyListItems = document.querySelectorAll('.dates ul li.empty-date');
+        emptyListItems.forEach((item) => {
+            item.classList.remove('hover-date'); // Ensure any hover class is removed
+        });
+    }
+    removeHoverEffect()
 }
+
 
 // Get the current date
 let currentDate = new Date();
@@ -92,35 +96,41 @@ let nextButton = calendarContainer.querySelector('.next');
 // Add event listeners to the buttons
 prevButton.addEventListener('click', previousMonth);
 nextButton.addEventListener('click', nextMonth);
+// Get the current day
+let currentDay = new Date().getDate();
 
-let currentDay = currentDate.getDate()
+// Get all the list items under ".dates ul"
+let dateElements = document.querySelectorAll(".dates ul li");
 
-// Find the element of the current date
-let currentDayElement = document.querySelector('.dates li:nth-child(' + (currentDay) + ')');
+// Loop through the list items to find the current day
+dateElements.forEach((element) => {
+    if (parseInt(element.textContent.trim()) === currentDay) {
+        // Add a class to highlight the current date
+        element.classList.add('highlight');
+    }
+});
 
-// Add a class to highlight the current date
-currentDayElement.classList.add('highlight');
 
 // Variable to declare whether darkmode is enabled or disabled
-let isDarkMode = false 
+let isDarkMode = false
 
 // Dark mode function
-function darkModeFunc(){
+function darkModeFunc() {
     if (!isDarkMode) {
         document.body.style.backgroundColor = 'rgb(32, 29, 29)'
-        document.body.querySelector('h1').style.color= 'white'
-        document.body.querySelector('.dates').style.filter='invert(0.2)'
+        document.body.querySelector('h1').style.color = 'white'
+        document.body.querySelector('.dates').style.filter = 'invert(0.2)'
         isDarkMode = true
-        
+
     }
     else {
         document.body.style.backgroundColor = ''
-        document.body.querySelector('h1').style.color= ''
-        document.body.querySelector('.dates').style.filter=''
+        document.body.querySelector('h1').style.color = ''
+        document.body.querySelector('.dates').style.filter = ''
         isDarkMode = false
-        
+
     }
-    
+
 }
 
 let nightmode_bar = document.querySelector('#nightmode_bar')
@@ -128,26 +138,26 @@ nightmode_bar.addEventListener('click', darkModeFunc)
 
 
 
-let isToggle = false 
+let isToggle = false
 
 // Toggle function
-function ToggleFunc(){
+function ToggleFunc() {
     if (!isToggle) {
-        let slide= document.querySelector('#togglebutton')
+        let slide = document.querySelector('#togglebutton')
         nightmode_bar.addEventListener('click', (e) => {
-            slide.style.left='20px'
+            slide.style.left = '20px'
         })
         isToggle = true
-        
+
     }
     else {
-        let slide= document.querySelector('#togglebutton')
+        let slide = document.querySelector('#togglebutton')
         nightmode_bar.addEventListener('click', (e) => {
-            slide.style.left=''
+            slide.style.left = ''
         })
         isToggle = false
-        
-    }    
+
+    }
 }
 nightmode_bar.addEventListener('click', ToggleFunc)
 

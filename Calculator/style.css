@@ -60,3 +60,31 @@ input{
     background:none;
     color: white;
 }
+/* media quiry for small screen */
+@media only screen and (max-width: 700px) and (min-width:100px) {
+   .btn{
+    height: 35px;
+    width: 35px;
+   }
+   #largebtn{
+    height: 35px;
+    width: 80px;
+   }
+   input{
+    width: 170px;
+    height: 80px;
+    font-size: small;
+   }
+   .calculator{
+    padding:12px;
+   }
+   .container{
+    flex-direction: column;
+   }
+   h1{
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 50px;
+   }
+    
+}
