@@ -118,15 +118,13 @@ let isDarkMode = false
 function darkModeFunc() {
     if (!isDarkMode) {
         document.body.style.backgroundColor = 'rgb(32, 29, 29)'
-        document.body.querySelector('h1').style.color = 'white'
-        document.body.querySelector('.dates').style.filter = 'invert(0.2)'
+        document.body.querySelector('h1').style.color = 'white'     
         isDarkMode = true
 
     }
     else {
         document.body.style.backgroundColor = ''
         document.body.querySelector('h1').style.color = ''
-        document.body.querySelector('.dates').style.filter = ''
         isDarkMode = false
 
     }

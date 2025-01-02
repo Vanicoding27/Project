@@ -35,8 +35,9 @@ h1{
 
 
 .container{
-    height: 80vh;
+    height: 100vh;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -107,7 +108,7 @@ h1{
     min-height: 200px;
     max-width: 320px;
     margin-top: 10px;
-    margin-left: 60px;
+    margin-left: 50px;
     list-style-type: none;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -141,13 +142,25 @@ li.empty-date {
 } 
 /* media quiry for small screen */
 @media only screen and (max-width: 700px) and (min-width:100px) {
-    .container{
-        width:300px;
-        height:250px;
-        margin: auto;
+    
+    .calendar{
+        width:280px;
+        height:300px;
     }
+    
     h1{
-        font-size: 40px;
-        margin: 50px;
+        font-size: 30px;
+        margin: 20px;
+    }
+    .dates{
+        margin-right:20px;
+
+    }
+    .weeks ul{
+        max-width: 200px;
+        gap:5px;
+    }
+    .monthyearblock{
+        font-size: 25px;
     }
 }

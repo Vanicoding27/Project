@@ -2,6 +2,7 @@
 body{
     background-color:rgb(32, 29, 29)
 }
+
 h1{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 900;
@@ -146,5 +147,6 @@ h1{
     .minute_hand{top:30px;left:100px;height: 70px;width: 5px;}
     .hour_hand{top:40px;left:105px;height: 55px;width: 6px;}
     .sec_hand{top:10px;left:102px;height: 90px;width: 3px;}
-    h1{font-size: 20px;width: max-content;}
+    h1{font-size: 20px;width: max-content;margin: 70px auto;}
+
 }

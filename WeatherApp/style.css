@@ -117,3 +117,14 @@ h1{
     height: 20px;
     width: 20px;
 }
+@media only screen and (max-width: 700px) and (min-width:100px){
+    h1{
+        margin:80px auto;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin: 100px auto;
+
+    }
+}
